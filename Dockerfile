@@ -13,6 +13,8 @@ COPY skypeapi.py /opt/
 
 EXPOSE $port
 
+#EXPOSE
+
 WORKDIR /opt
 
 CMD ["python", "skypeapi.py"]
