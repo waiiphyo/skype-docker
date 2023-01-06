@@ -17,11 +17,11 @@ jobs:
     - name: Docker login
       run : docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Build the Docker image
-      run: docker build -t sk-app:latest .
+      run: docker build -t skpy-app:latest .
     - name: Tags
       run: |
-        docker tag sk-app ${{ secrets.DOCKER_USER }}/sk-app:${{ github.sha }}
-        docker tag sk-app ${{ secrets.DOCKER_USER }}/sk-app:latest
+        docker tag skpy-app ${{ secrets.DOCKER_USER }}/skpy-app:${{ github.sha }}
+        docker tag skpy-app ${{ secrets.DOCKER_USER }}/skpy-app:latest
     - name: Push to docker hub
       run : |   
-        docker push ${{ secrets.DOCKER_USER }}/sk-app:latest
+        docker push ${{ secrets.DOCKER_USER }}/skpy-app:latest
